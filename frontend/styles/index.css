@@ -1,0 +1,37 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(228, 36, 10);
+    font-size: 50px;
+}
+
+.buttonWrapper {
+    text-align: center;
+}
+
+button {
+    font-size: 33px;
+    padding: 10px;
+    margin: 15px;
+}
+
+#createButton {
+    background-color: rgb(211, 30, 218);
+    color: white;
+    text-align: center;
+}
+
+.button {
+    background-color: orange;
+    color: white;
+}
+
+.selected {
+    background-color: rgb(228, 231, 26);
+    color: black;
+}
+
+h1 {
+    color: yellow;
+    text-align: center;
+}
