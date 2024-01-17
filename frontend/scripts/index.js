@@ -9,7 +9,7 @@ function resetButtons(buttonsList) {
 document.addEventListener('DOMContentLoaded', () => {
     let playerCount = 4;
 
-    // add event listeners to all buttons
+    // add event listeners to player select buttons
     document.querySelectorAll('#playerCount button').forEach(button => {
         button.addEventListener('click', (clickTarget) => {
             // remove color from non-selected buttons
@@ -24,5 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 clickTarget.target.className = 'selected';
             };
         });
+    });
+
+    // add event listener to create room button
+    document.getElementById('createButton').addEventListener('click', async () => {
+        try {
+            // send request to backend
+            let response = await fetch(`http://localhost:3000/createRoom?playerCount=${playerCount}`);
+            let data = await response.json();
+
+            // redirect to game page
+            window.location.href = `http://localhost:3000/game/${data.roomId}`;
+        } catch (err) {
+            console.log(err);
+        };
     });
 });
