@@ -16,9 +16,6 @@ app.get('/createRoom', async (req, resp) => {
     // create room
     let playerCount = req.query.playerCount;
     
-    // add player to room
-    
-
     // return roomId
     let roomId = generateRoomId();
     resp.send({ roomId: roomId });
